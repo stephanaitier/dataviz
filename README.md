@@ -10,22 +10,34 @@
 <li>#1 Step :</li>
 <li>
 <ul>
-<li>location filter : done</li>
+<li><strong>location filter</strong> : done</li>
 </ul>
 </li>
+<li>
+<ul>
 <li>
 <ul>
 <li>load list of countries in API</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<ul>
 <li>
 <ul>
 <li>load geoJSON of all countries to display them on a map</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>
+<ul>
 <li>
 <ul>
 <li>merge the arrays to display map countries that use the API and compare the amount of product refered in each country</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
