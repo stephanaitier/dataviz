@@ -20,6 +20,20 @@ body {
 #cat li:hover {
 	color: grey;
 }
+#cat-loader {
+	position: absolute;
+	background-color: white;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 70%;
+	height: 100vh;
+	display: flex;
+	z-index: 99;
+}
+#percent {
+	margin: auto;
+}
 #map {
 	position: absolute;
 	right: 0;

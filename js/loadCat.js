@@ -1,6 +1,5 @@
 function loadCat(cc) {
 	$.getJSON(`https://${cc}.openfoodfacts.org/categories.json`, function(data) {
-		var catList = []
 		var maxproduct = getMax(data.tags, 'products').products
 		for (cat of data.tags) {
 			var reg = /([^:]*)$/g
@@ -27,6 +26,9 @@ function loadCat(cc) {
 			let content = `<li id="${i}">${catList[i].name}</li>`
 			$('#cat ul').append(content)
 		}
-		return catList
+		$('#cat li').click(function() {
+			var id = $(this).attr('id')
+			loadCatStat(id)
+		})
 	})
 }
