@@ -1,5 +1,7 @@
 var cc = 'world'
 var cats = []
+var catList = []
+
 $(document).ready(function() {
 	loadCat(cc)
 	$('#map').on('click', function() {
