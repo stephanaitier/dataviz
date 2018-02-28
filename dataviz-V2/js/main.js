@@ -1,0 +1,11 @@
+$('.data-title').click(function() {
+	$('.data').removeClass('selected')
+	$('.data-data').hide()
+	$(this)
+		.parent()
+		.addClass('selected')
+	$(this)
+		.parent()
+		.find('.data-data')
+		.show()
+})
