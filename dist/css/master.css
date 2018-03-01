@@ -115,6 +115,9 @@ body {
 #cat-header {
 	flex-grow: 0;
 }
+#cat.active #cat-header p {
+	opacity: 0;
+}
 #cat-header p {
 	cursor: default;
 	margin: 0;
@@ -124,6 +127,7 @@ body {
 	width: 3vw;
 	line-height: 3.5vw;
 	text-align: center;
+	opacity: 1;
 }
 #cat.active ul {
 	list-style: none;

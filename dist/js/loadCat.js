@@ -26,7 +26,7 @@ function loadCat(cc) {
 			.children()
 			.remove()
 		for (var i = 0; i < catList.length; i++) {
-			let content = `<li id="${i}">${catList[i].name}</li>`
+			let content = `<li id="${i}">${catList[i].name}</li><hr>`
 			$('#cat ul').append(content)
 		}
 		$('#cat li').click(function() {
