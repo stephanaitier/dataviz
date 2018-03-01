@@ -24,6 +24,7 @@ body {
 }
 .data.selected {
 	flex-grow: 2;
+	/*fnejfek*/
 }
 .data-title {
 	cursor: pointer;
