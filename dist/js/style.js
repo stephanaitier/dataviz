@@ -1,0 +1,21 @@
+$('.data-title').click(function() {
+	$('.data').removeClass('selected')
+	$('.data-data').hide()
+	$(this)
+		.parent()
+		.addClass('selected')
+	$(this)
+		.parent()
+		.find('.data-data')
+		.show()
+})
+$('#cat .circle-plus').click(function() {
+	$('#cat')
+		.toggleClass('active')
+		.trigger('classChange')
+	$(this).toggleClass('opened')
+})
+$('#map-title').click(function() {
+	$('#map-title .circle-plus').toggleClass('opened')
+	$('.view-data').toggleClass('active')
+})

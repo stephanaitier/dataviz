@@ -4,29 +4,51 @@
     <meta charset="utf-8">
     <title>Open Food Fact</title>
     <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/jqvmap.css">
   </head>
   <body>
     <div class="container vertical">
       <div id="title">
-          titre
+          <img src="./img/logo.png" alt="">
       </div>
       <div class="container horizontal">
-        <div id="cat">
-          cat
+        <div id="cat" class="container horizontal">
+            <div class="container vertical">
+              <div id="cat-title">
+                Categories
+              </div>
+              <ul>
+
+              </ul>
+            </div>
+            <div id="cat-header">
+              <div class="circle-plus closed">
+                <div class="circle">
+                  <div class="horizontal"></div>
+                  <div class="vertical"></div>
+                </div>
+              </div>
+              <p>CATEGORY</p>
+            </div>
         </div>
-        <div class="container vertical">
-          <div class="container vertical">
+        <div class="container vertical" style="width: 20vw">
+          <div class="container vertical view-data active" id="map">
             <div id="map-title">
-              titre  map
+              <p>which country do you want to analyze ?</p>
+              <div class="circle-plus closed opened">
+                <div class="circle">
+                  <div class="horizontal"></div>
+                  <div class="vertical"></div>
+                </div>
+              </div>
             </div>
             <div id="map-data">
-              data map
             </div>
           </div>
-          <div class="container horizontal">
+          <div class="container horizontal view-data" id="datas">
             <div class="data selected" id="data1">
               <div class="data-title">
-                <p>data 1 titre</p>
+                <p>dataviz 01</p>
               </div>
               <div class="data-data">
                 data 1 data
@@ -34,7 +56,7 @@
             </div>
             <div class="data" id="data2">
               <div class="data-title">
-                <p>data 2 titre</p>
+                <p>dataviz 02</p>
               </div>
               <div class="data-data">
                 data 2 data
@@ -42,7 +64,7 @@
             </div>
             <div class="data" id="data3">
               <div class="data-title">
-                <p>data 3 titre</p>
+                <p>dataviz 03</p>
               </div>
               <div class="data-data">
                 data 3 data
@@ -54,6 +76,13 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" charset="utf-8"></script>
+    <script src="./js/querymap/jquery.vmap.js" charset="utf-8"></script>
+    <script src="./js/querymap/jquery.vmap.world.js" charset="utf-8"></script>
+    <script src="./js/loadMap.js" charset="utf-8"></script>
+  	<script src="./js/loadCat.js" charset="utf-8"></script>
+  	<script src="./js/loadCatStat.js" charset="utf-8"></script>
+    <script src="./js/style.js" charset="utf-8"></script>
     <script src="./js/main.js" charset="utf-8"></script>
   </body>
 </html>

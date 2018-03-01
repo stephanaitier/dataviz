@@ -1,11 +1,8 @@
-@font-face {
-	font-family: 'intro';
-	src: url('intro.ttf')format('truetype');
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 body {
 	margin: 0;
-	background-color: #c9c9c9;
-	font-family: 'intro', helvetica, sans-serif;
+	background-color: #e3f3f8;
+	font-family: 'Roboto', sans-serif;
 }
 .container {
 	display: flex;
@@ -20,51 +17,211 @@ body {
 	flex-direction: column;
 }
 .data {
-	height: 75vh;
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap;
 	flex-grow: 0;
-	transition: all 0.5s ease-out;
+	transition: all 0.5s ease-in-out;
 }
 .data.selected {
 	flex-grow: 2;
 }
 .data-title {
-	background-color: #a1a1a1;
+	cursor: pointer;
+	background-color: #ffdedf;
 	display: flex;
 	width: 3vw;
 	line-height: 3vw;
-	text-align: center;
+	padding-top: 15px;
+	text-align: left;
+	transition: all 0.5s ease-in-out;
 }
 .data-data {
+	background-color: #e3f3f8;
 	text-align: center;
 }
 .data-title p {
 	margin: 0;
+	width: 3vw;
 	writing-mode: vertical-rl;
 	text-orientation: sideways;
 }
 
 /* CONTENT ID */
-
+.view-data {
+	transition: all 0.5s ease-in-out;
+	flex-grow: 0;
+	overflow: hidden;
+}
+.view-data.active {
+	flex-grow: 1;
+}
+.view-data #map-data {
+	transition: all 0.5s ease-in-out;
+	display: flex;
+	padding: 0 30px;
+	height: 0;
+}
+.view-data.active #map-data {
+	height: auto;
+	width: 70vw;
+	align-self: center;
+	flex-direction: column;
+}
+.view-data #map-data svg {
+	margin: auto;
+	align-self: center;
+}
+.view-data#datas {
+	height: 0;
+}
+.view-data.active#datas {
+	height: auto;
+	display: flex;
+}
 #title {
+	background-color: #eb666a;
 	text-align: center;
-	height: 5vh;
-	line-height: 5vh;
+	height: 13vh;
+	display: flex;
+}
+#title img {
+	margin: auto;
+	height: 8vh;
 }
 #cat {
-	height: 95vh;
+	background-color: #418a9a;
+	height: 87vh;
+	flex-grow: 0;
+	color: white;
+	transition: all 0.5s ease-in-out;
+	width: 0;
+	overflow: hidden;
+}
+#cat.open {
+	width: auto;
+	overflow: visible;
+}
+#cat.open.active {
 	width: 23vw;
+}
+#cat .container.vertical {
+	transition: all 0.5s ease-in-out;
+	width: 0;
+	overflow: hidden;
+}
+#cat.active .container.vertical {
+	width: auto;
+}
+#cat-header {
+	flex-grow: 0;
+}
+#cat-header p {
+	cursor: default;
+	margin: 0;
+	padding-top: 15px;
+	writing-mode: vertical-rl;
+	text-orientation: sideways;
+	width: 3vw;
+	line-height: 3.5vw;
+	text-align: center;
+}
+#cat.active ul {
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+	width: auto;
 	overflow-y: scroll;
 }
-.container .container .container {
-	flex-wrap: wrap;
-	width: 77vw;
+#cat ul li {
+	font-weight: 300;
+	margin: 15px 0;
+}
+#cat ul {
+	padding: 0;
+	margin: 0;
+	width: 0;
+	overflow: hidden;
+}
+#map {
+	background-color: #64c5da;
+}
+#map-title {
+	cursor: pointer;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	background-color: #64c5da;
+	flex-grow: 0;
+	height: 5vh;
+	line-height: 6vh;
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-between;
+}
+#map-title p {
+	margin: 0;
 }
 .data .data-data {
-	display: none;
+	width: 0;
+	transition: all 0.5s ease-in-out;
+	overflow-x: hidden;
+}
+.data.selected .data-title {
+	background-color: #ffa9ab;
 }
 .data.selected .data-data {
 	flex-grow: 1;
+	width: auto;
+	padding: 15px;
+}
+
+/* PLUS MINUS TRANSITION */
+.closed .vertical {
+	transition: all 0.5s ease-in-out;
+	transform: rotate(-90deg);
+}
+.closed .horizontal {
+	transition: all 0.5s ease-in-out;
+	transform: rotate(-90deg);
+	opacity: 1;
+}
+
+.opened {
+	opacity: 1;
+}
+.opened .vertical {
+	transition: all 0.5s ease-in-out;
+	transform: rotate(90deg);
+}
+.opened .horizontal {
+	transition: all 0.5s ease-in-out;
+	transform: rotate(90deg);
+	opacity: 0;
+}
+
+.circle-plus {
+	cursor: pointer;
+	position: relative;
+	height: 5vh;
+	font-size: 1em;
+}
+.circle-plus .circle .horizontal {
+	position: absolute;
+	background-color: white;
+	width: 20px;
+	height: 5px;
+	left: 50%;
+	margin-left: -10px;
+	top: 50%;
+	margin-top: -2.5px;
+}
+.circle-plus .circle .vertical {
+	position: absolute;
+	background-color: white;
+	width: 5px;
+	height: 20px;
+	left: 50%;
+	margin-left: -2.5px;
+	top: 50%;
+	margin-top: -10px;
 }
